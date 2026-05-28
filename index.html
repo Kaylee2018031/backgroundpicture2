@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Image Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="hero">
+        <p class="eyebrow">Creative Studio</p>
+        <h1>AI Image Generator</h1>
+        <p class="subtitle">Type a prompt and generate stylized sample images instantly.</p>
+      </header>
+
+      <main>
+        <section class="generator card" aria-label="Image prompt form">
+          <label for="promptInput">Describe your image</label>
+          <div class="input-row">
+            <input
+              id="promptInput"
+              type="text"
+              placeholder="e.g. Futuristic city skyline at sunset, ultra-detailed"
+            />
+            <button id="generateBtn" type="button">Generate</button>
+          </div>
+          <p id="statusText" class="status" role="status" aria-live="polite"></p>
+        </section>
+
+        <section class="gallery-wrap">
+          <div class="gallery-header">
+            <h2>Generated Gallery</h2>
+            <button id="clearBtn" class="ghost" type="button">Clear</button>
+          </div>
+          <div id="gallery" class="gallery" aria-live="polite"></div>
+        </section>
+      </main>
+    </div>
+
+    <template id="imageCardTemplate">
+      <article class="image-card">
+        <img alt="Generated artwork" loading="lazy" />
+        <p class="prompt-caption"></p>
+      </article>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>
