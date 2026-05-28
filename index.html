@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -15,29 +15,38 @@
   <body>
     <div class="app-shell">
       <header class="hero">
-        <p class="eyebrow">Creative Studio</p>
-        <h1>AI Image Generator</h1>
-        <p class="subtitle">Type a prompt and generate stylized sample images instantly.</p>
+        <div class="top-bar">
+          <p class="eyebrow" data-i18n="eyebrow">Creative Studio</p>
+          <label class="lang-switch" for="languageSelect">
+            <span data-i18n="languageLabel">Language</span>
+            <select id="languageSelect" aria-label="Select language">
+              <option value="en">English</option>
+              <option value="ko">한국어</option>
+            </select>
+          </label>
+        </div>
+        <h1 data-i18n="title">AI Image Generator</h1>
+        <p class="subtitle" data-i18n="subtitle">Type a prompt and generate stylized sample images instantly.</p>
       </header>
 
       <main>
         <section class="generator card" aria-label="Image prompt form">
-          <label for="promptInput">Describe your image</label>
+          <label for="promptInput" data-i18n="inputLabel">Describe your image</label>
           <div class="input-row">
             <input
               id="promptInput"
               type="text"
               placeholder="e.g. Futuristic city skyline at sunset, ultra-detailed"
             />
-            <button id="generateBtn" type="button">Generate</button>
+            <button id="generateBtn" type="button" data-i18n="generateBtn">Generate</button>
           </div>
           <p id="statusText" class="status" role="status" aria-live="polite"></p>
         </section>
 
         <section class="gallery-wrap">
           <div class="gallery-header">
-            <h2>Generated Gallery</h2>
-            <button id="clearBtn" class="ghost" type="button">Clear</button>
+            <h2 data-i18n="galleryTitle">Generated Gallery</h2>
+            <button id="clearBtn" class="ghost" type="button" data-i18n="clearBtn">Clear</button>
           </div>
           <div id="gallery" class="gallery" aria-live="polite"></div>
         </section>
