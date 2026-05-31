@@ -50,6 +50,32 @@
           </div>
           <div id="gallery" class="gallery" aria-live="polite"></div>
         </section>
+
+        <section class="bookstore-generator card" aria-labelledby="bookstoreTitle">
+          <div class="bookstore-heading">
+            <p class="bookstore-kicker" data-i18n="bookstoreKicker">New feature</p>
+            <h2 id="bookstoreTitle" data-i18n="bookstoreTitle">Warm Bookstore Post Generator</h2>
+            <p data-i18n="bookstoreSubtitle">
+              Enter a theme to generate an English inspirational quote, Korean translation, Instagram caption, and hashtags.
+            </p>
+          </div>
+
+          <label for="themeInput" data-i18n="themeInputLabel">Post theme</label>
+          <div class="input-row">
+            <input
+              id="themeInput"
+              type="text"
+              autocomplete="off"
+              placeholder="e.g. starting again, rainy evenings, self-kindness"
+            />
+            <button id="bookstoreGenerateBtn" type="button" data-i18n="bookstoreGenerateBtn">Generate Warm Bookstore Post</button>
+          </div>
+          <p id="bookstoreStatusText" class="status" role="status" aria-live="polite"></p>
+
+          <article id="postOutput" class="post-card empty" aria-live="polite">
+            <p class="empty-message" data-i18n="bookstoreEmptyMessage">Your warm bookstore post will appear here.</p>
+          </article>
+        </section>
       </main>
     </div>
 
@@ -58,6 +84,26 @@
         <img alt="Generated artwork" loading="lazy" />
         <p class="prompt-caption"></p>
       </article>
+    </template>
+
+    <template id="postTemplate">
+      <div class="theme-chip"></div>
+      <section class="post-section">
+        <h3 data-field-title="quote"></h3>
+        <blockquote data-field="quote"></blockquote>
+      </section>
+      <section class="post-section">
+        <h3 data-field-title="translation"></h3>
+        <blockquote lang="ko" data-field="translation"></blockquote>
+      </section>
+      <section class="post-section">
+        <h3 data-field-title="caption"></h3>
+        <p class="caption-copy" data-field="caption"></p>
+      </section>
+      <section class="post-section">
+        <h3 data-field-title="hashtags"></h3>
+        <p class="hashtags" data-field="hashtags"></p>
+      </section>
     </template>
 
     <script src="script.js"></script>
